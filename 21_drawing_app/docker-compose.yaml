@@ -1,0 +1,14 @@
+version : "3"
+services:
+  mongows:
+    image: "mongo:latest"
+    container_name: mongows
+    restart: "on-failure"
+  
+  nodews:
+    image: "node:latest"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "C:\\Users\\katel\OneDrive\ -\ De\ Vinci\\ESILV_A4\\Web_App_Architectures\\TD7\node-ws7:/data"
+    command: tail -f /dev/null

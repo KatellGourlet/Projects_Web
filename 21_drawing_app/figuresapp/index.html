@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset='UTF-8'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type="text/css" href='styles.css'/>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    
+<div id=app>
+  <h1 style="font-size:5vw">Welcome Drawing Forms</h1>
+
+  <form action="http://localhost:3000/figuresapp" method="POST">
+
+    <div class = "classlogin" id=user>
+      <input type="text" value="" placeholder="Enter your name..." id="username"> 
+      <input type="button" value="Log in" onclick="login()" id="btn3"> 
+    </div>
+
+    <div class="bar" id=myButtonBar>
+
+     <p>Figures caracteristics:
+			<select id="form">
+				<option value="">Figures</option>
+				<option value="Triangle">Triangle</option>
+				<option value="Square">Square</option>
+				<option value="Circle">Circle</option>
+			</select>
+		
+      <label for="bgcolor">Background color: </label>
+      <input type="color" onclick="bg()" id="btn2" value="#E6B18E" list="bgList">
+        <datalist id="bgList">
+          <option value="#61391F"></option>
+          <option value="#E6B18E"></option>
+          <option value="#E08548"></option>
+          <option value="#614B3C"></option>
+          <option value="#AD6637"></option>
+        </datalist>
+
+      <label for="bordercolor">Border color: </label>
+      <input type="color" onclick="border()" id="btn3" value="#61391F" list="bgList">
+        <datalist id="bgList">
+          <option value="#61391F"></option>
+          <option value="#E6B18E"></option>
+          <option value="#E08548"></option>
+          <option value="#614B3C"></option>
+          <option value="#AD6637"></option>
+        </datalist>
+
+      <select id="px">
+				<option value="">Border Thickness: </option>
+				<option value="2">2</option>
+				<option value="4">4</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+      
+      <select id="size">
+				<option value="">Figure size: </option>
+				<option value="2">2</option>
+				<option value="4">4</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+			</select>
+
+      <input type="button" value="Display" onclick="startDraw()" id="btn1"> 
+    </p>
+
+    <p>Pen caracteristics:
+      <label for="color">Pen color: </label>
+      <input type="color" id="btn4" value="#61391F" list="bgList">
+        <datalist id="bgList">
+          <option value="#61391F"></option>
+          <option value="#E6B18E"></option>
+          <option value="#E08548"></option>
+          <option value="#614B3C"></option>
+          <option value="#AD6637"></option>
+        </datalist>
+
+      <select id="pxPen">
+				<option value="">Pen Thickness: </option>
+				<option value="2">2</option>
+				<option value="4">4</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+    </p>
+    
+    <p>Save: 
+      <input type="button" value="Open image in new tab" onclick="open1()" id="btn5"> 
+      <input type="button" value="Save on server" onclick="save()" id="btn6"> 
+      <input type="button" value="Open all saved images on new tab" onclick="allSave()" id="btn7">
+    </p>
+      
+    </div>
+  
+  </form>
+
+    <!-- A drawing box (just an empty space)-->
+    <div class="drawingBox" id=myAnim>
+      <canvas id="myCanvas" width="1000" height="300" style="border:2px solid #000000;">      
+      </canvas>
+    </div>
+    
+    <p>Last figure was draw by: <spam id="lastuser"></spam></p>
+
+
+</div>
+
+
+<script src="script.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>
