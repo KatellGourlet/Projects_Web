@@ -7,7 +7,7 @@ It is juste to respect the submission name request by the teacher as assigment 1
 
 ## Host on heroku
 
--> Drawing app is host on heroku here :
+-> Drawing app is host on heroku here : https://the-drawing-app.herokuapp.com/ \n 
 -> Movie Quizz is host on heroku here : 
 
 The drawing app was deploy with the dockerfile whereas the movie quizz was deploy with github.
