@@ -5,31 +5,35 @@ var express = require('express');
 var app = express();
 
 const fetch = require("node-fetch");
-var path = require('path');
 const assert = require('assert');
-
 app.use(express.static('public'));
-
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); 
 const jsonParser = bodyParser.json();
-
 var fs = require('fs');
+
+
+//--------------------------------------> MY APP <----------------------------------
 
 //Create HTTP server
 const http = require('http').createServer(app);
-
 const port = process.env.PORT || 3000;
 
+app.use(express.static('figuresapp'));
+
 http.listen(port, () => {
-  console.log('listening');
+    console.log(`server running at http://localhost:${port}/`);
 });
 
-//--------------------------------------> MY APP <----------------------------------
+/*
+//Another way to do it:
+var path = require('path');
 app.use(express.static(__dirname + '/figuresapp'));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/figuresapp/index.html'));
 });
+*/
+
 
 const io = require('socket.io')(http);
 
@@ -39,12 +43,8 @@ const io = require('socket.io')(http);
 const MongoClient = require('mongodb').MongoClient;
 
 const DATABASE_NAME = 'drawingsave';
-//var url = process.env.MONGOLAB_URI;
-//const url = `mongodb://localhost:49153/${DATABASE_NAME}`; // a voir selon port !!!
-const url = "mongodb+srv://katell-admin:mongokatell@figureappstore.yw4o2.mongodb.net/drawingsave";
-
-//"mongodb+srv://figureappstore.yw4o2.mongodb.net/drawingsave";
-
+const url = `mongodb+srv://katell-admin:mongokatell@figureappstore.yw4o2.mongodb.net/${DATABASE_NAME}`;
+//`mongodb://localhost:49153/${DATABASE_NAME}`;
 
 let db  = null;
 let collection = null;

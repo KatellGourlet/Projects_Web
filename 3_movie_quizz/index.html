@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset='UTF-8'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type="text/css" href='styles.css'/>
+  <script src="script.js"></script>
+</head>
+
+<body>
+    <h1> MOVIES QUIZZ </h1>
+
+    <!-- starting the quiz -->
+    <div id=quizz>
+
+    <div id=question0>
+        <!-- The question 0 is already fill but we can change the code to generate it automatically too-->
+        <!-- On top of the page display a div containing movie info : title , image and release date of the movie -->
+        <div id=info0>       
+            <p>Title: Harry Potter and the Philosopher's Stone</p>
+            <p>Release date: 2001-11-16</p>
+            <img id=image0 src="https://image.tmdb.org/t/p/w300//wuMc08IPKEatf9rnMNXvIDxqP4W.jpg"/>
+        </div>
+
+        <!-- Below the movie info div, display a div containing a form -->
+        <!-- In this form Ask the user to give the director or one of the actors of the movie 
+            in an input text field with a submit button. -->
+            
+        <div id=form0>
+            <p><spam id=help0> Enter the name of an actor/director of the film above: </spam></p>
+            <input id =submit type=text value = '' placeholder = '....' autofocus>
+            <button onClick = CheckAnswer() id=check >Check</button>
+        </div>
+
+        <div id=answer0>
+            <p id=result0></p>
+        </div>
+    </div>
+
+    </div>
+
+    <button id = next onClick = Next() disabled >Next Question </button>
+
+    
+
+</body>
+
+<div id="footer">© 2021 - Katell GOURLET - Movie Quizz </div> 
+
+</html>

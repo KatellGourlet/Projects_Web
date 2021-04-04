@@ -13,8 +13,6 @@
 <div id=app>
   <h1 style="font-size:5vw">Welcome Drawing Forms</h1>
 
-  <form action="http://localhost:3000/figuresapp" method="POST">
-
     <div class = "classlogin" id=user>
       <input type="text" value="" placeholder="Enter your name..." id="username"> 
       <input type="button" value="Log in" onclick="login()" id="btn3"> 
@@ -99,20 +97,19 @@
     </p>
       
     </div>
-  
-  </form>
 
     <!-- A drawing box (just an empty space)-->
     <div class="drawingBox" id=myAnim>
-      <canvas id="myCanvas" width="1000" height="300" style="border:2px solid #000000;">      
+      <canvas id="myCanvas" width="800px" height="400" style="border:2px solid #000000;">      
       </canvas>
     </div>
     
-    <p>Last figure was draw by: <spam id="lastuser"></spam></p>
+    <p id="info">Last figure was draw by: <spam id="lastuser"></spam></p>
 
 
 </div>
 
+<div id="footer">© 2021 - Katell GOURLET - Drawing App </div> 
 
 <script src="script.js" type="text/javascript"></script>
 

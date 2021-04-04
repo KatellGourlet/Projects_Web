@@ -50,9 +50,11 @@ function startDraw(){
   ctx.fillStyle = bgCol;
   ctx.strokeStyle = borderCol;
 
-  //Random start
-  startY = getRandomInt(300);
-  startX = getRandomInt(1000);
+  //Random start  
+  let width=800;
+  let height= 400;
+  startY = getRandomInt(height);
+  startX = getRandomInt(width);
     
   //Drawing  
   drawLine();
@@ -102,6 +104,17 @@ function getRandomInt(max) {
 }
 
 //---------------------------------> LOG IN <-----------------------------------------
+
+var input = document.getElementById("username");
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    login();
+  }
+});
+
 function login(){
 
   username = document.getElementById('username').value.toUpperCase();
