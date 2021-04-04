@@ -37,15 +37,14 @@ const io = require('socket.io')(http);
 //-----------------------------> CONNECTION TO MONGO DB <----------------------------
 //-----------------------------------------------------------------------------------
 const MongoClient = require('mongodb').MongoClient;
-//const MONGO_URL = "mongodb://localhost:27017/?readPreference=primary&ssl=false";
-//const client = new MongoClient(MONGO_URL);
 
 const DATABASE_NAME = 'drawingsave';
-const url = "mongodb+srv://figureappstore.yw4o2.mongodb.net/drawingsave";
-//"mongodb+srv://KATELL:fQirIuESo28fkpcm@cluster0.8y1jo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 //var url = process.env.MONGOLAB_URI;
+//const url = `mongodb://localhost:49153/${DATABASE_NAME}`; // a voir selon port !!!
+const url = "mongodb+srv://katell-admin:mongokatell@figureappstore.yw4o2.mongodb.net/drawingsave";
 
-//`mongodb://localhost:49153/${DATABASE_NAME}`; // a voir selon port !!!
+//"mongodb+srv://figureappstore.yw4o2.mongodb.net/drawingsave";
+
 
 let db  = null;
 let collection = null;
